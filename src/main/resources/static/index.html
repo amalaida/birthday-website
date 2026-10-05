@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday! 🎂</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            /* LIGHT PINK BACKGROUND */
+            background-color: #f9c9d4;
+
+            /* POLKA DOTS */
+            background-image:
+                    radial-gradient(#7b1e2b 3px, transparent 3px),
+                    radial-gradient(#173b2c 3px, transparent 3px);
+
+            background-size: 45px 45px;
+            background-position: 0 0, 22px 22px;
+
+            min-height: 100vh;
+            color: #172a46;
+
+            overflow-x: hidden;
+        }
+
+
+        /* MAIN AREA */
+
+        .container {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+
+        /* BIRTHDAY CARD */
+
+        .card {
+            background: rgba(255, 245, 247, 0.94);
+
+            border: 5px solid #173b2c;
+
+            border-radius: 30px;
+
+            padding: 50px 35px;
+
+            max-width: 700px;
+            width: 100%;
+
+            text-align: center;
+
+            box-shadow:
+                    10px 10px 0 #7b1e2b,
+                    20px 20px 0 rgba(23, 42, 70, 0.25);
+
+            animation: appear 1s ease;
+        }
+
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* CAKE */
+
+        .cake {
+            font-size: 90px;
+
+            margin-bottom: 20px;
+
+            animation: bounce 2s infinite;
+        }
+
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+
+        /* TITLE */
+
+        h1 {
+            font-size: clamp(40px, 8vw, 70px);
+
+            color: #172a46;
+
+            margin-bottom: 15px;
+
+            line-height: 1.1;
+        }
+
+
+        /* FRIEND'S NAME */
+
+        .name {
+            color: #7b1e2b;
+        }
+
+
+        /* SUBTITLE */
+
+        .subtitle {
+            font-size: 21px;
+
+            color: #173b2c;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+
+            background: #f6dce2;
+
+            border-left: 7px solid #7b1e2b;
+
+            border-right: 7px solid #173b2c;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            font-size: 18px;
+
+            color: #172a46;
+
+            line-height: 1.7;
+
+            margin: 25px 0;
+        }
+
+
+        /* BUTTON */
+
+        button {
+
+            border: none;
+
+            padding: 17px 32px;
+
+            border-radius: 50px;
+
+            background: #173b2c;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow: 5px 5px 0 #7b1e2b;
+        }
+
+
+        button:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 7px 9px 0 #7b1e2b;
+
+            background: #214d3a;
+        }
+
+
+        /* SURPRISE */
+
+        #surprise {
+
+            display: none;
+
+            margin-top: 30px;
+
+            padding: 20px;
+
+            background: #172a46;
+
+            color: white;
+
+            border-radius: 20px;
+
+            animation: appear 0.7s ease;
+        }
+
+
+        #surprise h2 {
+
+            color: #f9c9d4;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* FLOATING EMOJIS */
+
+        .floating {
+
+            position: fixed;
+
+            font-size: 30px;
+
+            animation: floatUp linear forwards;
+
+            pointer-events: none;
+        }
+
+
+        @keyframes floatUp {
+
+            from {
+
+                transform:
+                        translateY(100vh)
+                        rotate(0deg);
+
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                        translateY(-120vh)
+                        rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            margin-top: 30px;
+
+            color: #7b1e2b;
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .card {
+
+                padding: 35px 20px;
+            }
+
+            .cake {
+
+                font-size: 70px;
+            }
+
+            .subtitle {
+
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <div class="card">
+
+
+        <div class="cake">
+            🎂
+        </div>
+
+
+        <!-- CHANGE YOUR FRIEND'S NAME HERE -->
+
+        <h1>
+
+            Happy Birthday,
+
+            <span class="name">
+                Oli!
+            </span>
+
+            🎉
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            Today is all about celebrating you! 🥳
+
+        </p>
+
+
+        <div class="message">
+
+            💖 I hope your birthday is filled with
+            laughter, happiness, amazing memories,
+            and everything you deserve.
+
+            <br><br>
+
+            Thank you for being such an amazing online friend. Spamming me with snaps and so much more.
+            Here's to another year of rp,
+            crazy moments, and unforgettable drunk 'I love u' snaps! ✨
+
+        </div>
+
+
+        <button onclick="showSurprise()">
+
+           Press me 🎁 !!!
+
+        </button>
+
+
+        <div id="surprise">
+
+            <h2>
+                🎊 SURPRISE! 🎊
+            </h2>
+
+            <p>
+
+                You are officially one year older. 😎
+
+                <br><br>
+
+                Lmk what I can get for you with 20 bucks
+
+            </p>
+
+        </div>
+
+
+        <div class="footer">
+
+            Made with ❤️ just for you.
+            <br>
+            I overcame my fear of coding under pressure.. (or not)
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    function showSurprise() {
+
+        document.getElementById("surprise").style.display = "block";
+
+
+        const emojis = [
+            "🎉",
+            "🎈",
+            "❤️",
+            "✨",
+            "🥳",
+            "🎂",
+            "🎁"
+        ];
+
+
+        for (let i = 0; i < 35; i++) {
+
+            const element =
+                document.createElement("div");
+
+
+            element.className = "floating";
+
+
+            element.innerHTML =
+                emojis[
+                    Math.floor(
+                        Math.random() * emojis.length
+                    )
+                    ];
+
+
+            element.style.left =
+                Math.random() * 100 + "vw";
+
+
+            element.style.animationDuration =
+                (3 + Math.random() * 4) + "s";
+
+
+            element.style.fontSize =
+                (20 + Math.random() * 30) + "px";
+
+
+            document.body.appendChild(element);
+
+
+            setTimeout(() => {
+
+                element.remove();
+
+            }, 7000);
+
+        }
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
